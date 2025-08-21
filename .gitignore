@@ -1,0 +1,54 @@
+# C/C++ build artifacts
+*.o
+*.obj
+*.elf
+*.bin
+*.map
+*.list
+*.hex
+*.out
+*.exe
+*.a
+*.so
+*.d
+*.dep
+*.log
+*.suo
+*.idb
+*.pdb
+*.ilk
+*.aps
+*.ncb
+*.user
+*.sdf
+*.opensdf
+*.swp
+*.bak
+*.tmp
+*.stackdump
+
+# IDE/project files
+.vscode/
+.idea/
+*.code-workspace
+*.cproject
+*.project
+*.settings/
+*.DS_Store
+
+# Build folders
+bin/
+__objects/
+Debug/
+Release/
+
+# STM32CubeMX and other tool generated files
+*.ioc
+*.launch
+*.mxproject
+
+# Misc
+*.orig
+*.rej
+*~
+
