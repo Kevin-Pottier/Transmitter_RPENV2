@@ -4,8 +4,8 @@
 ################################################################################
 
 # Folders
-SRC_DIR := ../Drivers/src
-INC_DIR := ../Drivers/inc
+SRC_DIRS := ../Drivers/src ../Core
+INC_DIRS := ../Drivers/inc ../Core
 OBJ_DIR := ../bin/__objects
 BIN_DIR := ../bin
 
@@ -13,14 +13,14 @@ BIN_DIR := ../bin
 MCU := #TBD
 CC := arm-none-eabi-gcc
 LD := arm-none-eabi-ld
-CFLAGS := -mcpu=$(MCU) -mthumb -Wall -I$(INC_DIR)
+CFLAGS := -mcpu=$(MCU) -mthumb -Wall $(addprefix -I,$(INC_DIRS))
 LDFLAGS := -Tlinker.ld
 
 RM := rm -rf
 
 # Sources & objects
-SRCS := $(wildcard $(SRC_DIR)/*.c)
-OBJS := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
+SRCS := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
+OBJS := $(patsubst %.c,$(OBJ_DIR)/%.o,$(notdir $(SRCS)))
 
 #Target
 TARGET := $(BIN_DIR)/Transmitter.elf
@@ -37,7 +37,11 @@ endif
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+# Compilation rules for each source folder
+$(OBJ_DIR)/%.o: ../Drivers/src/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/%.o: ../Core/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(TARGET): $(OBJS)
