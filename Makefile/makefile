@@ -14,7 +14,7 @@ MCU := #TBD
 CC := arm-none-eabi-gcc
 LD := arm-none-eabi-ld
 CFLAGS := -mcpu=$(MCU) -mthumb -Wall -I$(INC_DIR)
-LDFLAGS := -T#LinkerPath
+LDFLAGS := -Tlinker.ld
 
 RM := rm -rf
 
@@ -25,7 +25,7 @@ OBJS := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
 #Target
 TARGET := $(BIN_DIR)/Transmitter.elf
 
-LINKER_SCRIPT := #LinkerPath
+LINKER_SCRIPT := linker.ld
 
 ifeq ($(wildcard $(LINKER_SCRIPT)),)
 all:
