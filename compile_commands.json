@@ -1,117 +1,132 @@
 [
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Core/Src/main.c -o build/main.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Core/Src/main.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Core/Src/main.c -o build/main.o",
+    "file": "Core/Src/main.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Core/Src/stm32l4xx_it.c -o build/stm32l4xx_it.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Core/Src/stm32l4xx_it.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Core/Src/stm32l4xx_it.c -o build/stm32l4xx_it.o",
+    "file": "Core/Src/stm32l4xx_it.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Core/Src/stm32l4xx_hal_msp.c -o build/stm32l4xx_hal_msp.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Core/Src/stm32l4xx_hal_msp.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Core/Src/stm32l4xx_hal_msp.c -o build/stm32l4xx_hal_msp.o",
+    "file": "Core/Src/stm32l4xx_hal_msp.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c -o build/stm32l4xx_hal_i2c.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c -o build/stm32l4xx_hal_i2c.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c -o build/stm32l4xx_hal_i2c_ex.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c -o build/stm32l4xx_hal_i2c_ex.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c -o build/stm32l4xx_hal.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c -o build/stm32l4xx_hal.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c -o build/stm32l4xx_hal_rcc.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c -o build/stm32l4xx_hal_rcc.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c -o build/stm32l4xx_hal_rcc_ex.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c -o build/stm32l4xx_hal_rcc_ex.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c -o build/stm32l4xx_hal_flash.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c -o build/stm32l4xx_hal_flash.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c -o build/stm32l4xx_hal_flash_ex.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c -o build/stm32l4xx_hal_flash_ex.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c -o build/stm32l4xx_hal_flash_ramfunc.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c -o build/stm32l4xx_hal_flash_ramfunc.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c -o build/stm32l4xx_hal_dma_ex.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c -o build/stm32l4xx_hal_gpio.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c -o build/stm32l4xx_hal_pwr.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c -o build/stm32l4xx_hal_dma.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c -o build/stm32l4xx_hal_pwr_ex.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c -o build/stm32l4xx_hal_dma_ex.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c -o build/stm32l4xx_hal_cortex.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c -o build/stm32l4xx_hal_pwr.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c -o build/stm32l4xx_hal_exti.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c -o build/stm32l4xx_hal_pwr_ex.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c -o build/stm32l4xx_hal_spi.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c -o build/stm32l4xx_hal_cortex.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c -o build/stm32l4xx_hal_spi_ex.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c -o build/stm32l4xx_hal_exti.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c -o build/stm32l4xx_hal_uart.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c -o build/stm32l4xx_hal_spi.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c -o build/stm32l4xx_hal_uart_ex.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c -o build/stm32l4xx_hal_spi_ex.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Core/Src/system_stm32l4xx.c -o build/system_stm32l4xx.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Core/Src/system_stm32l4xx.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c -o build/stm32l4xx_hal_uart.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Core/Src/sysmem.c -o build/sysmem.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Core/Src/sysmem.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c -o build/stm32l4xx_hal_uart_ex.o",
+    "file": "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c"
   },
   {
     "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
-    "command": "arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 -c Core/Src/syscalls.c -o build/syscalls.o",
-    "file": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2/Core/Src/syscalls.c"
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Core/Src/system_stm32l4xx.c -o build/system_stm32l4xx.o",
+    "file": "Core/Src/system_stm32l4xx.c"
+  },
+  {
+    "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Core/Src/sysmem.c -o build/sysmem.o",
+    "file": "Core/Src/sysmem.c"
+  },
+  {
+    "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Core/Src/syscalls.c -o build/syscalls.o",
+    "file": "Core/Src/syscalls.c"
+  },
+  {
+    "directory": "D:/ProjetPerso/RPEN_V2/Transmitter_RPENV2",
+    "command": "arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -DUSE_HAL_DRIVER -DSTM32L476xx -ICore/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc -IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy -IDrivers/CMSIS/Device/ST/STM32L4xx/Include -IDrivers/CMSIS/Include -IDrivers/Ext/Relay7_click/inc -Og -Wall -fdata-sections -ffunction-sections -g -gdwarf-2 Drivers/Ext/Relay7_click/src/relay.c -o build/relay.o",
+    "file": "Drivers/Ext/Relay7_click/src/relay.c"
   }
 ]

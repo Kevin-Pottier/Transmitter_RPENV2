@@ -23,6 +23,7 @@
 #include "stm32l4xx_hal_gpio.h"
 #include "stm32l4xx_hal_uart.h"
 #include <stdint.h>
+#include "relay.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
