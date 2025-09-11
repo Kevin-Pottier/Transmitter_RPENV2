@@ -156,7 +156,7 @@ LIBDIR =
 LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 
 # default action: build all
-all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
+all: clean $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 
 
 #######################################
@@ -204,7 +204,7 @@ clean:
 # flash and debug
 #######################################
 flash:
-	openocd -f interface/stlink.cfg -f target/stm32l4.cfg \
+	openocd -f interface/stlink.cfg -f target/stm32l4x.cfg \
 		-c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
 
 debug:
@@ -216,7 +216,9 @@ gdb:
 		-ex "monitor reset halt" \
 		-ex "load" \
 		-ex "break main"
-  
+run: 
+	$(MAKE) all -j8
+	$(MAKE) flash
 #######################################
 # dependencies
 #######################################
