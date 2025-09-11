@@ -199,6 +199,23 @@ $(BUILD_DIR):
 #######################################
 clean:
 	-rm -fR $(BUILD_DIR)
+
+#######################################
+# flash and debug
+#######################################
+flash:
+	openocd -f interface/stlink.cfg -f target/stm32l4.cfg \
+		-c "program $(BUILD_DIR)/$(TARGET).elf verify reset exit"
+
+debug:
+	openocd -f interface/stlink.cfg -f target/stm32l4x.cfg
+
+gdb:
+	arm-none-eabi-gdb $(BUILD_DIR)/$(TARGET).elf \
+		-ex "target remote localhost:3333" \
+		-ex "monitor reset halt" \
+		-ex "load" \
+		-ex "break main"
   
 #######################################
 # dependencies
