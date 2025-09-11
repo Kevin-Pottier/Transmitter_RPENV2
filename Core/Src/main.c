@@ -18,9 +18,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "stm32l476xx.h"
 #include "stm32l4xx_hal.h"
 #include "stm32l4xx_hal_gpio.h"
 #include "stm32l4xx_hal_uart.h"
+#include <stdint.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -34,7 +36,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define JOYSTICK_CENTER_PORT      GPIOA
+#define JOYSTICK_CENTER_PIN       GPIO_PIN_0
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -48,6 +51,8 @@ I2C_HandleTypeDef hi2c1;
 SPI_HandleTypeDef hspi2;
 
 UART_HandleTypeDef huart2;
+
+uint8_t button_pressed = 0; // Flag to indicate button press
 
 /* USER CODE BEGIN PV */
 
@@ -116,23 +121,11 @@ int main(void)
     HAL_Delay(3000);
     HAL_GPIO_WritePin(RED_LED_GPIO_Port, RED_LED_Pin, GPIO_PIN_RESET);
     HAL_Delay(2000);
-    GPIO_PinState green_state = HAL_GPIO_ReadPin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
     HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
-    green_state = HAL_GPIO_ReadPin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
 
-    if(green_state != GPIO_PIN_SET)
+    if( button_pressed != 0) 
     {
-        HAL_UART_Transmit(&huart2, (uint8_t *)"green off\r\n", 11, HAL_MAX_DELAY);
-    }
-    else
-    {
-        HAL_UART_Transmit(&huart2, (uint8_t *)"green on\r\n", 10, HAL_MAX_DELAY);
-    }
-    
-    GPIO_PinState button_state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
-    if( button_state == GPIO_PIN_SET) // Supposed to be the button pin but not sure why it does not detect pressing ?
-    {
-        HAL_UART_Transmit(&huart2, (uint8_t *)"button pressed\r\n", 16, HAL_MAX_DELAY);
+        HAL_UART_Transmit(&huart2, (uint8_t *)"Going to sleep\r\n", 16, HAL_MAX_DELAY);
         /* Enter Sleep Mode , wake up is done once User push-button is pressed */
         HAL_SuspendTick();
         HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
@@ -389,7 +382,34 @@ static void MX_GPIO_Init(void)
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
-  /* USER CODE END MX_GPIO_Init_2 */
+  /* Configure GPIO pin : Button_Center */
+  GPIO_InitStruct.Pin = JOYSTICK_CENTER_PIN;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(JOYSTICK_CENTER_PORT, &GPIO_InitStruct);
+
+  /* Enable and set EXTI line 0 Interrupt to the lowest priority */
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 2, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+}
+
+void EXTI0_IRQHandler(void)
+{
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
+}
+
+/**
+  * @brief  Callback for GPIO EXTI (button press)
+  */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if(GPIO_Pin == JOYSTICK_CENTER_PIN)
+  {
+    // User code for button press interrupt
+    HAL_UART_Transmit(&huart2, (uint8_t *)"[IT] Button pressed!\r\n", 22, HAL_MAX_DELAY);
+    button_pressed = ~button_pressed; // Set a flag or handle the button press event
+    // Optionally toggle an LED or perform other actions
+  }
 }
 
 /* USER CODE BEGIN 4 */
