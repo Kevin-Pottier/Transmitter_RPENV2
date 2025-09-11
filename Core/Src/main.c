@@ -18,6 +18,9 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "stm32l4xx_hal.h"
+#include "stm32l4xx_hal_gpio.h"
+#include "stm32l4xx_hal_uart.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -97,6 +100,7 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI2_Init();
   MX_USART2_UART_Init();
+  HAL_UART_Transmit(&huart2, (uint8_t *)"Hello World\r\n", 13, HAL_MAX_DELAY);
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -106,7 +110,34 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    HAL_Delay(5000);
+    HAL_GPIO_WritePin(RED_LED_GPIO_Port, RED_LED_Pin, GPIO_PIN_SET);
+    HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
+    HAL_Delay(3000);
+    HAL_GPIO_WritePin(RED_LED_GPIO_Port, RED_LED_Pin, GPIO_PIN_RESET);
+    HAL_Delay(2000);
+    GPIO_PinState green_state = HAL_GPIO_ReadPin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
+    HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
+    green_state = HAL_GPIO_ReadPin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
 
+    if(green_state != GPIO_PIN_SET)
+    {
+        HAL_UART_Transmit(&huart2, (uint8_t *)"green off\r\n", 11, HAL_MAX_DELAY);
+    }
+    else
+    {
+        HAL_UART_Transmit(&huart2, (uint8_t *)"green on\r\n", 10, HAL_MAX_DELAY);
+    }
+    
+    GPIO_PinState button_state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0);
+    if( button_state == GPIO_PIN_SET) // Supposed to be the button pin but not sure why it does not detect pressing ?
+    {
+        HAL_UART_Transmit(&huart2, (uint8_t *)"button pressed\r\n", 16, HAL_MAX_DELAY);
+        /* Enter Sleep Mode , wake up is done once User push-button is pressed */
+        HAL_SuspendTick();
+        HAL_PWR_EnterSLEEPMode(PWR_MAINREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+        HAL_ResumeTick();
+    }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

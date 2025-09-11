@@ -216,9 +216,8 @@ gdb:
 		-ex "monitor reset halt" \
 		-ex "load" \
 		-ex "break main"
-run: 
-	$(MAKE) all -j8
-	$(MAKE) flash
+run:
+	$(MAKE) all -j8 && $(MAKE) flash
 #######################################
 # dependencies
 #######################################
