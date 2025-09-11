@@ -41,6 +41,8 @@ bin/
 __objects/
 Debug/
 Release/
+build/
+.cache/
 
 # STM32CubeMX and other tool generated files
 *.ioc
