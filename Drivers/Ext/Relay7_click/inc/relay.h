@@ -2,45 +2,85 @@
 #define _RELAY_H_
 
 #include "stm32l4xx_hal.h"
-#include "stm32l4xx_hal_i2c.h"
 #include <stdint.h>
 
+/**
+ * @brief Relay 7 description register.
+ * @details Specified register for description of Relay 7 Click driver.
+ */
+#define RELAY7_REG_INPUT_PORT            0x00
+#define RELAY7_REG_OUTPUT_PORT           0x01
+#define RELAY7_REG_POLARITY_INVERSION    0x02
+#define RELAY7_REG_CONFIGURATION         0x03
 
+/**
+ * @brief Relay 7 port expander default configuration data.
+ * @details Specified default configuration data of Relay 7 Click driver.
+ */
+#define RELAY7_DEFAULT_CONFIG            0xF0
 
-enum  {
-    RELAY_OK = 0,
-    RELAY_ERROR = 1,
-    RELAY_I2C_ERROR = 2,
-    RELAY_INVALID_RELAY_NUMBER = 3,
-    RELAY_INVALID_STATE = 4
-} relay_error_t;
+/**
+ * @brief Relay 7 pin mask data values.
+ * @details Specified pin mask data values of Relay 7 Click driver.
+ */
+#define RELAY7_PIN_MASK_NONE             0x00
+#define RELAY7_PIN_MASK_P0               0x01
+#define RELAY7_PIN_MASK_P1               0x02
+#define RELAY7_PIN_MASK_P2               0x04
+#define RELAY7_PIN_MASK_P3               0x08
+#define RELAY7_ALL_PIN                   0x0F
+
+/**
+ * @brief Relay 7 pin logic state setting.
+ * @details Specified pin logic state setting of Relay 7 Click driver.
+ */
+#define RELAY7_PIN_STATE_LOW             0x00
+#define RELAY7_PIN_STATE_HIGH            0x01
+
+/**
+ * @brief Relay 7 pin bitmask data values.
+ * @details Specified pin bitmask data values of Relay 7 Click driver.
+ */
+#define RELAY7_SEL_REL1                  1
+#define RELAY7_SEL_REL2                  2
+#define RELAY7_SEL_REL3                  3
+#define RELAY7_SEL_REL4                  4
+
+/**
+ * @brief Relay 7 device address setting.
+ * @details Specified setting for device slave address selection of
+ * Relay 7 Click driver.
+ */
+#define RELAY7_DEVICE_ADDRESS            (0x70<<1)
 
 typedef struct {
     I2C_HandleTypeDef *hi2c;
-    uint8_t state; // Each bit represents the state of a relay (1 = ON, 0 = OFF)
-} relay_t;
+    uint8_t i2c_address;
+} relay_gpio_expander_t;
 
-#define RELAY7_I2C_ADDRESS (0x112) 
+typedef enum {
+    RELAY_OK = 0,
+    RELAY_I2C_ERROR,
+    RELAY_INVALID_RELAY_NUMBER
+} relay_status_t;
 
-/** Relay 7 Command Registers */
-#define RELAY7_CMD_INPUT_PORT_REG 0x00
-#define RELAY7_CMD_OUTPUT_PORT_REG 0x01
-#define RELAY7_CMD_POLARITY_INVERSION_REG 0x02
-#define RELAY7_CMD_CONFIGURATION_REG 0x03
+typedef enum
+{
+    RELAY7_STATE_OPEN = 0,
+    RELAY7_STATE_CLOSE = 1
 
+} relay7_relay_state_t;
 
-/** Relays are set on port 0, 1, 2 and 3 of the GPIO expander */
-#define RELAY_1 0x0
-#define RELAY_2 0x1
-#define RELAY_3 0x2
-#define RELAY_4 0x3
+typedef struct {
+    relay_gpio_expander_t expander;
+    relay7_relay_state_t relay_state;  // Bitmask to hold the state of the relays
+    uint8_t relay_number; // Number of relays (0-3 for 4 relays)
+} relay7_t;
 
+relay_status_t relay_init(relay_gpio_expander_t *expander);
+relay_status_t relay_test_i2c_connection(relay_gpio_expander_t *expander);
+relay_status_t relay_set_relay_state(relay7_t *relay, relay7_relay_state_t state);
+relay_status_t relay_write_register(relay_gpio_expander_t *expander, uint8_t reg, uint8_t value);
+relay_status_t relay_read_register(relay_gpio_expander_t *expander, uint8_t reg, uint8_t *value);
 
-uint8_t relay_init(I2C_HandleTypeDef *hi2c);
-uint8_t relay_set_state(relay_t *relay);
-uint8_t relay_get_state(relay_t *relay);
-uint8_t relay_toggle(relay_t *relay);
-uint8_t relay_set_all(uint8_t value);
-uint8_t relay_get_all(void);
-
-#endif
+#endif // _RELAY_H_
