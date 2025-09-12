@@ -53,15 +53,10 @@
  */
 #define RELAY7_DEVICE_ADDRESS            (0x70<<1)
 
-typedef struct {
-    I2C_HandleTypeDef *hi2c;
-    uint8_t i2c_address;
-} relay_gpio_expander_t;
-
 typedef enum {
     RELAY_OK = 0,
     RELAY_I2C_ERROR,
-    RELAY_INVALID_RELAY_NUMBER
+    RELAY_INVALID_RELAY_NUMBER,
 } relay_status_t;
 
 typedef enum
@@ -72,14 +67,19 @@ typedef enum
 } relay7_relay_state_t;
 
 typedef struct {
+    I2C_HandleTypeDef *hi2c;
+    uint8_t i2c_address;
+    uint8_t relay_state;  // Bitmask to hold the state of the relays
+} relay_gpio_expander_t;
+
+typedef struct {
     relay_gpio_expander_t expander;
-    relay7_relay_state_t relay_state;  // Bitmask to hold the state of the relays
     uint8_t relay_number; // Number of relays (0-3 for 4 relays)
 } relay7_t;
 
 relay_status_t relay_init(relay_gpio_expander_t *expander);
 relay_status_t relay_test_i2c_connection(relay_gpio_expander_t *expander);
-relay_status_t relay_set_relay_state(relay7_t *relay, relay7_relay_state_t state);
+relay_status_t relay_set_relay_state(relay7_t *relay, uint8_t state);
 relay_status_t relay_write_register(relay_gpio_expander_t *expander, uint8_t reg, uint8_t value);
 relay_status_t relay_read_register(relay_gpio_expander_t *expander, uint8_t reg, uint8_t *value);
 

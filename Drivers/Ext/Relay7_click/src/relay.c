@@ -7,24 +7,30 @@ relay_status_t relay_init(relay_gpio_expander_t *expander) {
   // pins as outputs whereas C4, C5, C6 & C7 pins as inputs
   uint8_t config_data = RELAY7_DEFAULT_CONFIG;
 
-  if (relay_write_register(expander, RELAY7_REG_CONFIGURATION, config_data) !=
-      RELAY_OK) {
+  if (HAL_I2C_Mem_Write(expander->hi2c, expander->i2c_address,
+                        RELAY7_REG_CONFIGURATION, I2C_MEMADD_SIZE_8BIT,
+                        &config_data, 1, HAL_MAX_DELAY) != HAL_OK) {    
     return RELAY_I2C_ERROR;
   } // Expander configured
 
-  if (relay_read_register(expander, RELAY7_REG_INPUT_PORT, &config_data) !=
-      RELAY_OK) {
+  if (HAL_I2C_Mem_Read(expander->hi2c, expander->i2c_address,
+                       RELAY7_REG_CONFIGURATION, I2C_MEMADD_SIZE_8BIT,
+                       &config_data, 1, HAL_MAX_DELAY) != HAL_OK) {
     return RELAY_I2C_ERROR;
   }
   if (config_data != RELAY7_DEFAULT_CONFIG) {
     return RELAY_I2C_ERROR;
+
   } // Expander configuration read back and verified
+  HAL_I2C_Mem_Read(expander->hi2c, expander->i2c_address,
+                   RELAY7_REG_OUTPUT_PORT, I2C_MEMADD_SIZE_8BIT,
+                   &expander->relay_state, 1, HAL_MAX_DELAY); //State of relays read
 
   return RELAY_OK;
 }
 
 relay_status_t relay_set_relay_state(relay7_t *relay,
-                                     relay7_relay_state_t state) {
+                                     uint8_t state) {
 
   if (relay->relay_number < 1 || relay->relay_number > 4) {
     return RELAY_INVALID_RELAY_NUMBER;
@@ -32,25 +38,25 @@ relay_status_t relay_set_relay_state(relay7_t *relay,
 
   // Write the updated state back to the output port
   switch (relay->relay_number) {
+  case 0:
+    state = (state == RELAY7_STATE_CLOSE)
+                ? (relay->expander.relay_state | RELAY7_PIN_MASK_P0)
+                : (relay->expander.relay_state & ~RELAY7_PIN_MASK_P0);
+    break;
   case 1:
     state = (state == RELAY7_STATE_CLOSE)
-                ? (relay->relay_state | RELAY7_PIN_MASK_P0)
-                : (relay->relay_state & ~RELAY7_PIN_MASK_P0);
+                ? (relay->expander.relay_state | RELAY7_PIN_MASK_P1)
+                : (relay->expander.relay_state & ~RELAY7_PIN_MASK_P1);
     break;
   case 2:
     state = (state == RELAY7_STATE_CLOSE)
-                ? (relay->relay_state | RELAY7_PIN_MASK_P1)
-                : (relay->relay_state & ~RELAY7_PIN_MASK_P1);
+                ? (relay->expander.relay_state | RELAY7_PIN_MASK_P2)
+                : (relay->expander.relay_state & ~RELAY7_PIN_MASK_P2);
     break;
   case 3:
     state = (state == RELAY7_STATE_CLOSE)
-                ? (relay->relay_state | RELAY7_PIN_MASK_P2)
-                : (relay->relay_state & ~RELAY7_PIN_MASK_P2);
-    break;
-  case 4:
-    state = (state == RELAY7_STATE_CLOSE)
-                ? (relay->relay_state | RELAY7_PIN_MASK_P3)
-                : (relay->relay_state & ~RELAY7_PIN_MASK_P3);
+                ? (relay->expander.relay_state | RELAY7_PIN_MASK_P3)
+                : (relay->expander.relay_state & ~RELAY7_PIN_MASK_P3);
     break;
   default:
     return RELAY_INVALID_RELAY_NUMBER;
@@ -61,7 +67,15 @@ relay_status_t relay_set_relay_state(relay7_t *relay,
                     RELAY7_REG_OUTPUT_PORT, 1, (uint8_t *)&state, 1,
                     HAL_MAX_DELAY);
 
-  relay->relay_state = state;
+  relay->expander.relay_state = state; // Update the stored state
+
+  HAL_I2C_Mem_Read(relay->expander.hi2c, relay->expander.i2c_address,
+                   RELAY7_REG_OUTPUT_PORT, 1, (uint8_t *)&state, 1,
+                   HAL_MAX_DELAY);
+
+    if (state != relay->expander.relay_state) {
+        return RELAY_I2C_ERROR;
+    } // Verify the state was set correctly
 
   return RELAY_OK;
 }

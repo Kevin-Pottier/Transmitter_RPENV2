@@ -127,6 +127,14 @@ int main(void) {
                       HAL_MAX_DELAY);
   }
 
+  if(relay_init(&relay.expander) != RELAY_OK) {
+    HAL_UART_Transmit(&huart2, (uint8_t *)"Relay Init Error\r\n", 18,
+                      HAL_MAX_DELAY);
+  } else {
+    HAL_UART_Transmit(&huart2, (uint8_t *)"Relay Init OK\r\n", 16,
+                      HAL_MAX_DELAY);
+  } 
+
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -136,13 +144,30 @@ int main(void) {
   while (1) {
     /* USER CODE END WHILE */
     HAL_Delay(5000);
+
+    if (relay_set_relay_state(&relay, RELAY7_STATE_CLOSE) != RELAY_OK) {
+      HAL_UART_Transmit(&huart2, (uint8_t *)"Relay close Error\r\n", 20,
+                        HAL_MAX_DELAY);
+    } else {
+      HAL_UART_Transmit(&huart2, (uint8_t *)"Relay close OK\r\n", 17,
+                        HAL_MAX_DELAY);
+    }
+
     HAL_GPIO_WritePin(RED_LED_GPIO_Port, RED_LED_Pin, GPIO_PIN_SET);
     HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
     HAL_Delay(3000);
     HAL_GPIO_WritePin(RED_LED_GPIO_Port, RED_LED_Pin, GPIO_PIN_RESET);
     HAL_Delay(2000);
     HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
-    
+
+    if(relay_set_relay_state(&relay, RELAY7_STATE_OPEN) != RELAY_OK) {
+      HAL_UART_Transmit(&huart2, (uint8_t *)"Relay open Error\r\n", 19,
+                        HAL_MAX_DELAY);
+    } else {
+      HAL_UART_Transmit(&huart2, (uint8_t *)"Relay open OK\r\n", 16,
+                        HAL_MAX_DELAY);
+    }
+
     if (button_pressed != 0) {
       HAL_UART_Transmit(&huart2, (uint8_t *)"Going to sleep\r\n", 16,
                         HAL_MAX_DELAY);
