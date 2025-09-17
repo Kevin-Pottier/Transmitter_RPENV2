@@ -74,12 +74,14 @@ typedef struct {
 
 typedef struct {
     relay_gpio_expander_t expander;
-    uint8_t relay_number; // Number of relays (0-3 for 4 relays)
 } relay7_t;
 
 relay_status_t relay_init(relay_gpio_expander_t *expander);
 relay_status_t relay_test_i2c_connection(relay_gpio_expander_t *expander);
-relay_status_t relay_set_relay_state(relay7_t *relay, uint8_t state);
+relay_status_t relay_set_relay_on(relay7_t *relay, uint8_t relay_number);
+relay_status_t relay_set_relay_off(relay7_t *relay, uint8_t relay_number);
+relay_status_t relay_set_relay_state(relay7_t *relay, relay7_relay_state_t state, uint8_t relay_number);
+relay_status_t relay_set_all(relay7_t *relay, relay7_relay_state_t state);
 relay_status_t relay_write_register(relay_gpio_expander_t *expander, uint8_t reg, uint8_t value);
 relay_status_t relay_read_register(relay_gpio_expander_t *expander, uint8_t reg, uint8_t *value);
 
