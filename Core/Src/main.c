@@ -134,7 +134,7 @@ int main(void) {
   /* USER CODE BEGIN WHILE */
   while (1) {
     /* USER CODE END WHILE */
-    HAL_Delay(200);
+    HAL_Delay(100);
     // HAL_GPIO_WritePin(RED_LED_GPIO_Port, RED_LED_Pin, GPIO_PIN_SET);
     // HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
     // HAL_Delay(300);
@@ -143,7 +143,7 @@ int main(void) {
     // HAL_GPIO_TogglePin(GREEN_LED_GPIO_Port, GREEN_LED_Pin);
 
     relay_set_all(&relay, RELAY7_STATE_OPEN);
-    HAL_Delay(200);
+    HAL_Delay(100);
     relay_set_all(&relay, RELAY7_STATE_CLOSE);
 
     if (button_pressed != 0) {
